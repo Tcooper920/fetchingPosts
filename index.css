@@ -1,0 +1,53 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #efefef;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* posts container */
+.posts {
+	display: flex;
+	flex-direction: column;
+	max-width: 40rem;
+	margin: 0 auto;
+	padding-top: 1rem;
+	font-size: .9rem;
+}
+
+.post-block {
+	color: #536c77;
+	border-bottom: 2px solid #d2d2d2;
+	background-color: white;
+	margin: 0rem 1rem 1rem 1rem;
+	padding: 1rem;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+.authors-name {
+	display: inline-block;
+    margin-top: 1rem;
+}
+
+strong {
+	font-weight: bold;
+	color: #589dd4;
+}
+
+.comment {
+	font-size: .8rem;
+    margin-top: 1rem;
+    border-left: 1px solid lightgray;
+    padding-left: .5rem;
+}
+
+.comment-label {
+	font-weight: bold;
+	color: #4e4e4e;
+}
