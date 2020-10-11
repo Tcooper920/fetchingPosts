@@ -8,3 +8,10 @@ const getAllUsers = async () => {
 	return retrievedUsers;
 };
 
+// Get all posts
+const getAllPosts = async () => {
+	const getPosts = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+	const retrievedPosts = await getPosts.json();
+
+	return retrievedPosts;
+};
