@@ -42,6 +42,35 @@ const displayNamePostAndTitle = async () => {
 	users.forEach((user) => {
 		displayPostAndUser(user.id);
 	});
+
+	getComments();
 };
 
 displayNamePostAndTitle();
+
+// Display comments for each post when clicked
+const getComments = async () => {
+	const postBlock = await document.querySelectorAll(".post-block");
+
+	postBlock.forEach((post) => {
+		post.addEventListener("click", function () {
+			displayComments(this.id);
+		});
+	});
+};
+
+// Display comments for post with specific id
+const displayComments = async (thisPostId) => {
+	const getComments = await fetch(`https://jsonplaceholder.typicode.com/posts/${thisPostId}/comments`);
+	const retrievedComments = await getComments.json();
+	let thisPostWithASpecificId = document.getElementById(thisPostId); 
+
+	retrievedComments.forEach((comment) => {
+		thisPostWithASpecificId.innerHTML += `<div class='comment'>
+												<span class='comment-label'>Comment:</span> ${comment.name}<br>
+												<span class='comment-label'>Name:</span> ${comment.name}</div>`;
+	});
+
+	thisPostWithASpecificId.style.pointerEvents = "none";
+};
+
